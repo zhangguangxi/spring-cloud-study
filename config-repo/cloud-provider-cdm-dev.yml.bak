@@ -1,0 +1,33 @@
+neo:
+  hello: dev
+server:
+  port: 9002
+
+mybatis:
+  properties: db_alias_cdm :${db.alias.cdm:cdm_db}
+
+com:
+  rjkj:
+    cloud:
+      datasource:
+        local:
+          cdm:
+            driverClassName: ${mysql.driverClassName:com.mysql.jdbc.Driver}
+            filters: ${mysql.filters:stat}
+            initialSize: ${mysql.initialSize:1}
+            maxActive: ${mysql.maxActive:40}
+            maxOpenPreparedStatements: ${mysql.maxOpenPreparedStatements:20}
+            maxPoolPreparedStatementPerConnectionSize: ${mysql.maxPoolPreparedStatementPerConnectionSize:20}
+            maxWait: ${mysq.maxWait:10000}
+            minEvictableIdleTimeMillis: ${msyql.minEvictableIdleTimeMillis:300000}
+            minIdle: ${mysql.minIdle:1}
+            password: ${mysql.password:cdm}
+            poolPreparedStatements: ${mysql.poolPreparedStatements:true}
+            testOnBorrow: ${mysql.testOnBorrow:true}
+            testOnReturn: ${mysql.testOnReturn:true}
+            testWhileIdle: ${mysql.testWhileIdle:true}
+            timeBetweenEvictionRunsMillis: ${mysql.timeBetweenEvictionRunsMillis:60000}
+            type: ${mysql.type:com.alibaba.druid.pool.DruidDataSource}
+            url: jdbc:mysql://${mysql.host:192.168.3.14}:3306/cdm_db?characterEncoding=utf8&allowMultiQueries=true
+            username: ${mysql.username:cdm}
+            validationQuery: ${mysql.validationQuery:select 'x'}
